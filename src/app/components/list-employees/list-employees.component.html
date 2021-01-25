@@ -3,7 +3,8 @@
         <div class="card-body">
             <span class="h3">Employees List</span>
             <button class="btn btn-dark btn-lg float-end" [routerLink]="['/create-employee']">Add</button>
-            <table class="table mt-5 table-striped">
+            <h5 style="margin-top: 30px;" *ngIf="employees.length < 1">No entries for employees</h5>
+            <table *ngIf="employees.length > 0" class="table mt-5 table-striped">
                 <thead>
                   <tr>
                     <th >Name</th>
@@ -14,36 +15,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>                    
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>1341234123</td>
-                    <td>25000</td>
+                  <tr *ngFor="let employee of employees">                    
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.lastname }}</td>
+                    <td>{{ employee.doc }}</td>
+                    <td>{{ employee.salary | currency  }}</td>
                     <td>
-                        <i class="far fa-edit fa-lg text-info me-3"></i>
-                        <i class="far fa-trash-alt fa-lg text-danger"></i>
+                        <i class="far fa-edit fa-lg text-info me-3" [routerLink]="['/edit-employee/',employee.id]"></i>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="deleteEmployee(employee.id)"></i>
                     </td>
-                  </tr>
-                  <tr>                    
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>1341234123</td>
-                    <td>25000</td>
-                    <td>
-                        <i class="far fa-edit fa-lg text-info me-3"></i>
-                        <i class="far fa-trash-alt fa-lg text-danger"></i>
-                    </td>
-                  </tr>
-                  <tr>                    
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>1341234123</td>
-                    <td>25000</td>
-                    <td>
-                        <i class="far fa-edit fa-lg text-info me-3"></i>
-                        <i class="far fa-trash-alt fa-lg text-danger"></i>
-                    </td>
-                  </tr>                 
+                  </tr>              
                 </tbody>
               </table>
         </div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "employees-crud-45b6b": {
+      "hosting": {
+        "Empleados": [
+          "employees-crud-45b6b"
+        ]
+      }
+    }
+  }
+}
