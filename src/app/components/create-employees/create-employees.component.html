@@ -1,0 +1,37 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Create new employee</h3>
+                    <form class="mt-4">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" placeholder="Name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" placeholder="Lastname">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" placeholder="Document ID">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" placeholder="Salary">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <button class="btn btn-secondary btn-lg me-3" type="text" [routerLink]="['/list-employees']">Back</button>
+                                <button class="btn btn-dark btn-lg" type="submit">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
